@@ -1,9 +1,7 @@
-#[derive(Debug)]
-pub enum Op {
-    JP(u16),
-    SE(u8, u8),
-    LD(u8, u8),
-}
+pub mod error;
+pub mod op;
+
+use self::op::Op;
 
 pub struct Cpu {
     pc: u16,
