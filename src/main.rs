@@ -9,7 +9,10 @@ use std::fs::File;
 
 fn run() -> Result<(), Error> {
     let matches = App::new("Emul8r")
-        .arg(Arg::with_name("disassemble").short("d"))
+        .author("Matt Hunzinger")
+        .arg(Arg::with_name("disassemble")
+             .short("d")
+             .help("Disassemble file"))
         .arg(
             Arg::with_name("PATH")
                 .help("ROM file path")
@@ -18,7 +21,8 @@ fn run() -> Result<(), Error> {
         )
         .get_matches();
 
-    let path = matches.value_of("PATH").ok_or(Error::Path)?;
+    // Required is true so can't panic
+    let path = matches.value_of("PATH").unwrap();
     let mut file = File::open(&path)?;
 
     if matches.is_present("disassemble") {
