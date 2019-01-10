@@ -1,7 +1,4 @@
-pub mod error;
-pub mod op;
-
-use self::op::Op;
+use crate::op::Op;
 
 pub struct Cpu {
     pc: u16,

@@ -12,7 +12,7 @@ pub enum Error {
 }
 
 impl From<IOError> for Error {
-    fn from(inner: IOError) -> Error {
+    fn from(inner: IOError) -> Self {
         Error::IO { inner }
     }
 }

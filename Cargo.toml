@@ -5,4 +5,5 @@ authors = ["Matt Hunzinger <mhunzing2@gmail.com>"]
 edition = "2018"
 
 [dependencies]
+clap = "2.32.0"
 failure = "0.1.5"
